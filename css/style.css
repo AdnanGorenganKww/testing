@@ -924,6 +924,21 @@ section {
   align-items: center;
   justify-content: center;
   padding: var(--space-5);
+
+   opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.doc-detail-overlay[hidden] {
+  display: none !important;
+}
+
+/* Saat modal aktif / terbuka */
+.doc-detail-overlay:not([hidden]) {
+  display: flex !important;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .doc-detail-panel {
