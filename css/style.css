@@ -644,13 +644,16 @@ section {
 }
 
 .org-tier-core {
-  flex-wrap: wrap;
-  gap: var(--space-6);
+  display: none;
+  justify-content: center;
   align-items: flex-start;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .org-branch {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: var(--space-3);
