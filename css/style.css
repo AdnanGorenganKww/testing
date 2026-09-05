@@ -1227,10 +1227,6 @@ section {
   bukan lewat display.
 */
 
-.doc-detail-overlay:not([hidden]) {
-  display: flex;
-}
-
 /* ==================================================
    28. HAMBURGER MENU — animasi ikon & panel mobile
    ================================================== */
