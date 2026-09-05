@@ -210,6 +210,8 @@ function openDocDetail(id) {
   setTimeout(() => {
     document.getElementById("docDetailClose")?.focus();
   }, 50);
+  overlay.removeAttribute("hidden");
+  document.body.style.overflow = "hidden";
 }
 
 function closeDocDetail() {
@@ -222,4 +224,6 @@ function closeDocDetail() {
 }
 function closeBtnFocus() {
   document.getElementById("docDetailClose")?.focus();
+  overlay.setAttribute("hidden", "");
+  document.body.style.overflow = "";
 }
