@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JURNAL — Digital Organization Hub</title>
+  <meta name="description" content="JURNAL — mengabadikan cerita, menyampaikan informasi. Profil organisasi, struktur kepengurusan, dokumentasi kegiatan, dan anggota.">
+
+  <!-- Ganti dengan favicon asli, taruh di assets/logo/ -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand" aria-label="JURNAL — Beranda">
+        <!-- Ganti dengan logo asli, taruh di assets/logo/logo.svg -->
+        <img src="assets/logo/logo.svg" alt="" class="brand-logo" width="32" height="32">
+        <span class="brand-name">JURNAL</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link is-active">Beranda</a></li>
+          <li><a href="profil.html" class="nav-link">Profil</a></li>
+          <li><a href="dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          <li><a href="anggota.html" class="nav-link">Anggota</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <i class="ph ph-list" aria-hidden="true"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-decoration" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy" data-reveal>
+          <p class="hero-eyebrow">Digital Organization Hub</p>
+          <h1 id="hero-title" class="hero-title">
+            JURNAL
+            <span class="hero-subtitle">Mengabadikan cerita, menyampaikan informasi.</span>
+          </h1>
+
+          <div class="hero-actions">
+            <a href="dokumentasi.html" class="btn btn-primary">
+              Lihat Dokumentasi
+              <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="profil.html" class="btn btn-ghost">
+              Kenal Jurnal
+              <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal data-reveal-delay="1">
+          <!-- Ganti dengan foto dokumentasi asli, taruh di assets/dokumentasi/ -->
+          <img
+            src="assets/dokumentasi/hero-featured.jpg"
+            alt="Dokumentasi kegiatan JURNAL"
+            class="hero-image"
+            data-parallax
+          >
+        </div>
+      </div>
+    </section>
+    <section class="docs-preview" aria-labelledby="docs-preview-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2 id="docs-preview-title">Dokumentasi Terbaru</h2>
+          <a href="dokumentasi.html" class="link-arrow">
+            Lihat semua
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="docs-scroll" id="docsScroll" role="list">
+
+          <a href="dokumentasi.html#upacara-bendera" class="doc-card" role="listitem" data-reveal>
+            <div class="doc-card-media">
+              <!-- Taruh foto asli di assets/dokumentasi/ -->
+              <img src="assets/dokumentasi/upacara-bendera.jpg" alt="Dokumentasi Upacara Bendera" loading="lazy">
+            </div>
+            <p class="doc-card-caption">Upacara</p>
+          </a>
+
+          <a href="dokumentasi.html#malabar" class="doc-card" role="listitem" data-reveal>
+            <div class="doc-card-media">
+              <img src="assets/dokumentasi/malabar.jpg" alt="Dokumentasi kegiatan Malabar" loading="lazy">
+            </div>
+            <p class="doc-card-caption">Malabar</p>
+          </a>
+
+          <a href="dokumentasi.html#ldk" class="doc-card" role="listitem" data-reveal>
+            <div class="doc-card-media">
+              <img src="assets/dokumentasi/ldk.jpg" alt="Dokumentasi kegiatan LDK" loading="lazy">
+            </div>
+            <p class="doc-card-caption">LDK</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-search" aria-labelledby="docs-search-title">
+      <div class="container">
+        <div class="search-panel" data-reveal>
+          <h2 id="docs-search-title">Cari Dokumentasi</h2>
+          <p class="search-hint">Ketik judul, kegiatan, atau divisi — misalnya "upacara" atau "fotografi".</p>
+
+          <form class="search-form" action="dokumentasi.html" method="GET" role="search">
+            <label for="homeSearchInput" class="sr-only">Cari dokumentasi</label>
+            <i class="ph ph-magnifying-glass search-icon" aria-hidden="true"></i>
+            <input
+              type="search"
+              id="homeSearchInput"
+              name="q"
+              class="search-input"
+              placeholder="Cari dokumentasi..."
+              autocomplete="off"
+            >
+            <button type="submit" class="btn btn-primary search-submit">Cari</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <span class="brand-name">JURNAL</span>
+        <p class="footer-tagline">Mengabadikan cerita.<br>Menyampaikan informasi.</p>
+
+        
+          <a href="https://instagram.com/jurnal.organisasi"
+          class="social-link"
+          aria-label="Instagram JURNAL"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="ph ph-instagram-logo" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navigasi footer">
+        <ul>
+          <li><a href="dokumentasi.html">Dokumentasi</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="anggota.html">Anggota</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-bottom">
+        <p>Web ini dibuat oleh <a href="#" class="footer-credit-link">Adnan Sya'ban Mubarok</a></p>
+        <p>&copy; <span id="currentYear">2026</span> JURNAL</p>
+      </div>
+
+    </div>
+  </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
