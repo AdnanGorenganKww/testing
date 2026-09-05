@@ -156,14 +156,14 @@ function renderGrid(state, grid, emptyState) {
 }
 
 /* -------------------------------------------------- */
-/* Panel detail dokumentasi                            */
+/* Panel detail dokumentasi                           */
 /* -------------------------------------------------- */
 function initDetailOverlay() {
   const overlay = document.getElementById("docDetailOverlay");
   const closeBtn = document.getElementById("docDetailClose");
-  if (!overlay || !closeBtn) return;
+  if (!overlay) return;
 
-  closeBtn.addEventListener("click", closeDocDetail);
+  closeBtn?.addEventListener("click", closeDocDetail);
 
   overlay.addEventListener("click", (event) => {
     if (event.target === overlay) closeDocDetail();
@@ -175,6 +175,7 @@ function initDetailOverlay() {
 }
 
 function openDocDetail(id) {
+  if (!id) return;
   const doc = dokumentasiData.find((d) => d.id === id);
   if (!doc) return;
 
@@ -185,24 +186,30 @@ function openDocDetail(id) {
   const description = document.getElementById("docDetailDescription");
   const driveLink = document.getElementById("docDetailDriveLink");
 
+  if (!overlay) return;
+
   const formatter = new Intl.DateTimeFormat("id-ID", {
     day: "numeric",
     month: "long",
     year: "numeric"
   });
 
-  image.src = doc.thumbnail;
-  image.alt = `Dokumentasi ${doc.title}`;
-  title.textContent = doc.title;
-  date.textContent = formatter.format(new Date(doc.date));
-  description.textContent = doc.description;
-  driveLink.href = doc.driveUrl;
+  if (image) {
+    image.src = doc.thumbnail || "";
+    image.alt = `Dokumentasi ${doc.title}`;
+  }
+  if (title) title.textContent = doc.title;
+  if (date) date.textContent = formatter.format(new Date(doc.date));
+  if (description) description.textContent = doc.description;
+  if (driveLink) driveLink.href = doc.driveUrl || "#";
 
   overlay.hidden = false;
   document.body.style.overflow = "hidden";
   history.replaceState(null, "", `#${doc.id}`);
 
-  closeBtnFocus();
+  setTimeout(() => {
+    document.getElementById("docDetailClose")?.focus();
+  }, 50);
 }
 
 function closeDocDetail() {
@@ -211,9 +218,8 @@ function closeDocDetail() {
 
   overlay.hidden = true;
   document.body.style.overflow = "";
-  history.replaceState(null, "", window.location.pathname);
+  history.replaceState(null, "", window.location.pathname + window.location.search);
 }
-
 function closeBtnFocus() {
   document.getElementById("docDetailClose")?.focus();
 }
